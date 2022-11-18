@@ -2,11 +2,11 @@ import enum
 import numpy as np
 import galois
 
-from math import log2, ceil
+from math import log2, ceil, gcd
 from typing import Optional
 
-from . import round_constants as rc
-from . import round_numbers as rn
+import round_constants as rc
+import round_numbers as rn
 
 
 class HashType(enum.Enum):
@@ -42,7 +42,7 @@ class Poseidon:
         self.security_level = security_level
 
         # TODO: For now alpha is fixed parameter
-        if np.gcd(alpha, p - 1) == 1:
+        if gcd(alpha, p - 1) == 1:
             self.alpha = alpha
         else:
             print("Not available alpha")

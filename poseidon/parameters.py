@@ -1,4 +1,4 @@
-from .hash import Poseidon, OptimizedPoseidon, HashType
+from hash import Poseidon, OptimizedPoseidon, HashType
 
 
 def case_simple():
